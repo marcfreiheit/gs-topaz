@@ -3,7 +3,7 @@
 	"name": "Topaz",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#commands"
 		},
 		{
 			"include": "#strings"
@@ -13,10 +13,25 @@
 		}
 	],
 	"repository": {
-		"keywords": {
+		"commands": {
 			"patterns": [{
 				"name": "keyword.control.topaz",
-				"match": "\\b(abort|allstacks|begin|break|category:|commit|continue|c|debugrun|define|disassem|display|doit|down|edit|errorcount|exec|exit|exitifnoerror|expecterror|expectvalue|fileformat|fileout|fr_cls|frame|gcitrace|help|hierachy|history|iferr|iferr_clear|iferr_list|iferror|implementors|input|inspect|interp|level|limit|list|listw|l|literals|loadua|login|logout|logoutifloggedin|lookup|nbresult|nbrun|nbstep|obj1|obj2|object|omit|output|pausefordebug|pkglookup|printit|protectmethods|quit|releaseall|remark|removeallclassmethods|run|send|senders|set|shell|spawn|stack|status|step|stk|strings|stringsic|subclasses|temporary|thread|threads|time|unprotectmethods|up|where)\\b"
+				"match": "\\b(abort|allstacks|begin|break|category:|commit|continue|c|debugrun|define|disassem|display|doit|down|edit|errorcount|exec|exit|exitifnoerror|expecterror|expectvalue|fileformat|fileout|fr_cls|frame|gcitrace|help|hierachy|history|iferr|iferr_clear|iferr_list|iferror|implementors|input|inspect|interp|level|limit|list|listw|l|literals|loadua|login|logout|logoutifloggedin|lookup|nbresult|nbrun|nbstep|obj1|obj2|object|omit|output|pausefordebug|pkglookup|printit|protectmethods|quit|releaseall|remark|removeallclassmethods|run|send|senders|set|shell|spawn|stack|status|step|stk|strings|stringsic|subclasses|temporary|thread|threads|time|unprotectmethods|up|where)\\s"
+			},
+			{
+				"match": "\\b(methodsFor:).+(stamp:).+\\s",
+				"captures": {
+					"1": {"name": "keyword.control.topaz"},
+					"2": {"name": "keyword.control.topaz"}
+				}
+			},
+			{
+				"match": "\\b(object:).+(at:).+(put:).+\\b",
+				"captures": {
+					"1": {"name": "keyword.control.topaz"},
+					"2": {"name": "keyword.control.topaz"},
+					"3": {"name": "keyword.control.topaz"}
+				}
 			}]
 		},
 		"strings": {
@@ -32,7 +47,7 @@
 		},
 		"SmallTalk": {
 			"name": "source.smalltalk.embedded.topaz",
-			"begin": "^(method:).+",
+			"begin": "^(method:|classmethod:).+",
 			"beginCaptures": {
 				"1": { "name": "keyword.control.topaz" }
 			},

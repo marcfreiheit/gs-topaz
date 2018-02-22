@@ -31,7 +31,8 @@
             "scopeName": "source.topaz",
             "path": "./syntaxes/topaz.tmLanguage.json",
             "embeddedLanguages": {
-                "source.smalltalk": "smalltalk"
+                "source.smalltalk": "smalltalk",
+                "source.shell": "shellscript"
             }
         }]
     }

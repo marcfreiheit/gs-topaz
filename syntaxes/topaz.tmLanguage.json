@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Topaz",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.topaz",
+				"match": "\\b(abort|allstacks|begin|break|category:|classmethod|classmethod:|commit|continue|c|debugrun|define|disassem|display|doit|down|edit|errorcount|exec|exit|exitifnoerror|expecterror|expectvalue|fileformat|fileout|fr_cls|frame|gcitrace|help|hierachy|history|iferr|iferr_clear|iferr_list|iferror|implementors|input|inspect|interp|level|limit|list|listw|l|literals|loadua|login|logout|logoutifloggedin|lookup|method|method:|nbresult|nbrun|nbstep|obj1|obj2|object|omit|output|pausefordebug|pkglookup|printit|protectmethods|quit|releaseall|remark|removeallclassmethods|run|send|senders|set|shell|spawn|stack|status|step|stk|strings|stringsic|subclasses|temporary|thread|threads|time|unprotectmethods|up|where)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.topaz",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.topaz",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.topaz"
+}

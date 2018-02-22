@@ -1,0 +1,26 @@
+{
+    "name": "gs-topaz",
+    "displayName": "Gemstone Topaz Script",
+    "description": "Languagle support for topaz scripts",
+    "version": "0.0.1",
+    "publisher": "marcfreiheit",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "topaz",
+            "aliases": ["Topaz", "topaz"],
+            "extensions": [".tpz"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "topaz",
+            "scopeName": "source.topaz",
+            "path": "./syntaxes/topaz.tmLanguage.json"
+        }]
+    }
+}

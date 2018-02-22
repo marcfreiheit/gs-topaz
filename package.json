@@ -7,8 +7,17 @@
     "engines": {
         "vscode": "^1.20.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marcfreiheit/gs-topaz"
+     },
+     "bugs": {
+        "url": "https://github.com/marcfreiheit/gs-topaz/issues"
+    },
+    "license": "MIT",
     "categories": [
-        "Languages"
+        "Languages",
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
@@ -20,7 +29,10 @@
         "grammars": [{
             "language": "topaz",
             "scopeName": "source.topaz",
-            "path": "./syntaxes/topaz.tmLanguage.json"
+            "path": "./syntaxes/topaz.tmLanguage.json",
+            "embeddedLanguages": {
+                "source.smalltalk": "smalltalk"
+            }
         }]
     }
 }
